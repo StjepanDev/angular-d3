@@ -20,7 +20,7 @@ export class Bar2Component implements AfterViewInit {
   data: ChartData = {} as ChartData;
 
   private svg: any;
-  private margin = 50;
+  private margin = 150;
   private width = 750 - this.margin * 2;
   private height = 400 - this.margin * 2;
 

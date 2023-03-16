@@ -5,5 +5,22 @@
 <!-- <app-bar></app-bar>
 <app-pie></app-pie>
 <app-scatter></app-scatter> -->
-<app-bar2 chartName="ChartA" [data]="chartData_2D_1"></app-bar2>
-<app-bar2 chartName="ChartB" [data]="chartData_2D_2"></app-bar2>
+<!-- <app-bar2 chartName="ChartA" [data]="chartData_2D_1"></app-bar2>
+<app-bar2 chartName="ChartB" [data]="chartData_2D_2"></app-bar2> -->
+
+<div class="container">
+  <div
+    (click)="viewMovie(movie.id)"
+    class="card"
+    *ngFor="let movie of movieService.movies"
+  >
+    <app-bar2 chartName="ChartA" [data]="chartData_2D_1"></app-bar2>
+
+    <img
+      class="cover"
+      [src]="'https://www.themoviedb.org/t/p/w500' + movie.poster_path"
+      alt="movie poster"
+    />
+    <div class="title">{{ movie.original_title }} {{ movie.vote_average }}</div>
+  </div>
+</div>
